@@ -5,3 +5,5 @@ Requirements: Tensorflow 2.10.1, and non-conflicting versions of nltk, pyodbc, n
 and Ted Talk transcripts (or your own collection of transcripts).
 
 Code uses a 6-layer Recurrent Neural Network, converting the text into GloVe word vectors passed through three layers of a Bidirectional Long Short Term Memory (BiLSTM) before using a Dropout layer for overfitting and a final Dense layer to classify sequences of words into sequences of labels which describe which words in the sequence of words (if any) ends a sentence.
+
+Next phase - feed the sentences into a BERT CNN supervised model to predict the relationship between transcripts and key business success metrics.
