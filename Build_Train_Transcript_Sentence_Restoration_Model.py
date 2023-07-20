@@ -3,14 +3,16 @@ Max_Allowed_Sequence_Length=512
 
 def Get_Corpus_Transcripts():
     import pyodbc
-    db = pyodbc.connect(r'Driver={SQL Server};Server=(local);Database=TrainingCorpus;Trusted_Connection=yes;',autocommit=True)
-    dblink=db.cursor()
-    Transcripts_Rows=dblink.execute("Select Transcript_lower_punc_only_sentence_boundary,TextIdxKey                                         From TedTalk                                         Where Transcript_lower_punc_only_sentence_boundary is not null").fetchall()
-    dblink.close()
-    db.close()
+    DB = pyodbc.connect(r'Driver={SQL Server};Server=(local);Database=TrainingCorpus;Trusted_Connection=yes;',autocommit=True)
+    DB_Link=DB.cursor()
+    Transcripts_Rows=DB_Link.execute("Select Transcript_Lower_Punc_Only_Sentence_Boundary,TextIdxKey \
+                                        From TedTalk \
+                                        Where Transcript_Lower_Punc_Only_Sentence_Boundary Is Not Null").fetchall()
+    DB_Link.close()
+    DB.close()
     Transcripts=dict()
-    for row in Transcripts_Rows:
-        Transcripts[row[1]]=row[0]
+    for Row in Transcripts_Rows:
+        Transcripts[Row[1]]=Row[0]
     return(Transcripts)
 
 
