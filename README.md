@@ -7,3 +7,4 @@ and Ted Talk transcripts (or your own collection of transcripts).
 Code uses a 6-layer Recurrent Neural Network, converting the text into GloVe word vectors passed through three layers of a Bidirectional Long Short Term Memory (BiLSTM) before using a Dropout layer for overfitting and a final Dense layer to classify sequences of words into sequences of labels which describe which words in the sequence of words (if any) ends a sentence.
 
 Next phase - feed the sentences into a BERT CNN supervised model to predict the relationship between transcripts and key business success metrics.
+Later future improvement - add audio input to better predict sentence endings using vocal inflections and pause times. 
